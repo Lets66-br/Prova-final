@@ -1,0 +1,189 @@
+programa {
+  funcao inicio() {
+    inteiro opcao = 0
+    inteiro pontuacao = 0
+    inteiro dificuldade = 1
+    cadeia nome = ""
+    cadeia idioma = "Portugues"
+    cadeia volume = "ON" 
+
+
+    enquanto(opcao != 5){
+      escreva("===== QUIZ DE FUTEBOL =====\n")
+      escreva("1 - Comecar Quiz\n")
+      escreva("2 - Rank\n")
+      escreva("3 - Configuração\n")
+      escreva("4 - Regras\n")
+      escreva("5 - Sair\n")
+      
+
+      escreva("Escolha uma opcao: ")
+      leia(opcao)
+
+      limpa()
+
+      escolha(opcao){
+        caso 1:
+        se(nome == ""){
+          escreva("Digite seu nome: ")
+          leia(nome)
+
+          limpa()
+
+          escreva("\nEscolha a dificuldade:\n")
+          escreva("1 - Fácil\n")
+          escreva("2 - Médio\n")
+          escreva("3 - Difícil\n")
+
+          leia(dificuldade)
+
+          limpa()
+        }
+        escreva("\nBem-vindo, ", nome, "!\n")
+
+        se(dificuldade == 1){
+          escreva("Modo Facil selecionado!\n")
+        }
+        senao{
+          se(dificuldade == 2){
+            escreva("Modo Medio selecionado!\n")
+          }
+          senao{
+            escreva("Modo Dificil selecionado!\n")
+          }
+        }
+        escreva("Iniciando Quiz...\n")
+        inteiro pergunta = 1
+        inteiro resposta = 0
+        inteiro pontuacao = 0
+        se(dificuldade == 1){
+          enquanto(pergunta <= 5){
+            limpa()
+
+             se(pergunta == 1){
+              escreva("===== PERGUNTA 1 =====\n")
+              escreva("Qual selecao venceu a Copa do Mundo de 2002?\n")
+              escreva("A) Argentina\n")
+              escreva("B) Brasil\n")
+              escreva("C) Alemanha\n")
+              escreva("D) Italia\n")
+
+              escreva("Resposta (A-D): ")
+              leia(resposta)
+
+              se(resposta == "B" ou resposta == "b"){
+                 pontuacao = pontuacao + 10
+                 escreva("Correto! +10 pontos\n")
+              }
+              senao{
+                escreva("Errou!\n")
+              }
+
+             }
+          }
+        }
+        
+        pare
+        
+        caso 2:
+        
+        escreva("===== RANK =====\n")
+        escreva("1º Carlos67 - 250 pontos\n")
+        escreva("2º Capitão Fariseu - 180 pontos\n")
+        escreva("3º Arrascabeça - 120 pontos\n")
+        escreva(nome, " - ", pontuacao, " pontos\n")
+      
+        
+        pare
+
+        caso 3:
+        inteiro opcaoConfig
+        escreva("===== CONFIGURACAO =====\n")
+        escreva("1 - Idioma\n")
+        escreva("2 - Volume\n")
+
+        escreva("Escolha uma opcao: ")
+        leia(opcaoConfig)
+
+        escolha(opcaoConfig){
+          caso 1:
+
+            inteiro idiomaEscolha
+
+            escreva("===== IDIOMA =====\n")
+            escreva("1 - Portugues\n")
+            escreva("2 - Ingles\n")
+            leia(idiomaEscolha)
+            escolha(idiomaEscolha){
+               caso 1:
+                    idioma = "Portugues"
+                    escreva("Idioma alterado para Portugues!\n")
+                    pare
+
+                caso 2:
+                    idioma = "Ingles"
+                    escreva("Idioma alterado para Ingles!\n")
+                    pare
+
+                    pare
+            }
+            pare
+             caso 2:
+
+            se(volume == "ON")
+            {
+                volume = "OFF"
+            }
+            senao
+            {
+                volume = "ON"
+            }
+
+            escreva("Volume: ", volume, "\n")
+          
+            pare
+        }
+        pare
+        
+        caso 4:
+         limpa()
+         inteiro voltar = 0
+
+         enquanto(voltar != 7){
+
+          escreva("===== REGRAS =====\n")
+          escreva("1 - Escolha uma dificuldade antes de jogar.\n")
+          escreva("2 - Responda as perguntas corretamente.\n")
+          escreva("3 - Quanto maior a dificuldade,\n")
+          escreva("    maior sera a pontuacao obtida.\n")
+          escreva("4 - Cada pergunta vale uma quantidade\n")
+          escreva("    diferente de pontos.\n")
+          escreva("Fácio = 1 ponto, Médio = 2, Díficio = 3.\n")
+          escreva("5 - O objetivo e fazer a maior\n")
+          escreva("    pontuacao possivel.\n")
+          escreva("6 - Consulte o Rank para comparar\n")
+          escreva("    sua pontuacao.\n")
+
+          escreva("7 - Voltar ao menu\n")
+          leia(voltar)
+         
+         
+         
+         }
+          limpa()
+          pare
+
+          caso 5:
+          escreva("================================\n")
+          escreva("Obrigado por jogar!\n")
+          escreva("Saindo do programa...\n")
+          escreva("================================\n")
+
+          pare
+
+
+      }
+    }
+    
+  }
+}
